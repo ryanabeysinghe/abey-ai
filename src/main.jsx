@@ -8,6 +8,7 @@ import Home from './routes/home/Home';
 import Dashboard from './routes/dashboard/Dashboard'
 import Chat from './routes/chat/Chat'
 import RootLayout from './layouts/rootLayout/RootLayout';
+import DashboardLayout from './layouts/dashboardLayout/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        element: <DashboardLayout />,
+        children: [
+          {
+            path: "/dashboard",
+            element: <Dashboard />
+          },
+          {
+            path: "/dashboard/chats/:id",
+            element: <Chat />
+          },
+        ]
       },
     ],
   },
