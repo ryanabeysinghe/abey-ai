@@ -24,9 +24,6 @@ const RootLayout = () => {
             <span className="uppercase">abey ai</span>
           </Link>
           <div className="">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
