@@ -1,0 +1,24 @@
+.headerOne {
+    background: linear-gradient(to right, #217bfe, #e55571);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.planetImg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.05;
+    animation: 100s linear infinite rotatePlanets;
+    z-index: -1;
+}
+
+@keyframes rotatePlanets {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
