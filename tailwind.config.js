@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         customAqua: "#00FFFF", // Aqua
+        customBlue: "#217bfe", // Blue
+        customLightGray: "#ddd" // Light Gray
       },
     },
   },
