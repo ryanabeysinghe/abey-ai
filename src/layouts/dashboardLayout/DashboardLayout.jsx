@@ -21,11 +21,11 @@ const DashboardLayout = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className="flex gap-[50px] pt-5 h-full">
+      <div className="flex-1">
         <ChatHistory />
       </div>
-      <div>
+      <div className="flex-[4] bg-customCinder">
         <Outlet />
       </div>
     </div>

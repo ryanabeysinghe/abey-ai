@@ -9,7 +9,8 @@ export default {
       colors: {
         customAqua: "#00FFFF", // Aqua
         customBlue: "#217bfe", // Blue
-        customLightGray: "#ddd" // Light Gray
+        customLightGray: "#ddd", // Light Gray
+        customCinder: "#12101B", // Cinder
       },
     },
   },
