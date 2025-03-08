@@ -11,6 +11,8 @@ export default {
         customBlue: "#217bfe", // Blue
         customLightGray: "#ddd", // Light Gray
         customCinder: "#12101B", // Cinder
+        customCharade: "#2C2937", // Charade
+        customGray: "#888888", // Gray
       },
     },
   },
