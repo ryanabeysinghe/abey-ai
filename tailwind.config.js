@@ -13,6 +13,8 @@ export default {
         customCinder: "#12101B", // Cinder
         customCharade: "#2C2937", // Charade
         customGray: "#888888", // Gray
+        customGallery: "#ECECEC", // Gallery
+        customMidGray: "#605E68", // Mid Gray
       },
     },
   },
