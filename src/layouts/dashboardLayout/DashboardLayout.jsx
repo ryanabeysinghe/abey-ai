@@ -1,7 +1,7 @@
 import { useAuth } from "@clerk/clerk-react";
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import ChatHistory from "../../components/ChatHistory";
+import ChatHistory from "../../components/ChatHistory/ChatHistory";
 
 const DashboardLayout = () => {
 
