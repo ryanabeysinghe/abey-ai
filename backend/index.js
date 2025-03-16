@@ -10,6 +10,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const ImageKit = require('imagekit');
+const cors = require('cors');
+
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+}))
 
 const imagekit = new ImageKit({
     urlEndpoint: process.env.IMAGE_KIT_URL_ENDPOINT,
@@ -26,6 +31,5 @@ app.get("/api/upload", (req, res) => {
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 })
-
 
 // console.log("test3");
