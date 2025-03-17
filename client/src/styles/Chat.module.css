@@ -8,3 +8,7 @@
     max-width: 80%;
     align-self: flex-end;
 }
+
+p, li {
+    margin: 10px 0px;
+}
