@@ -16,6 +16,21 @@ const NewPrompt = () => {
     aiData: {},
   });
 
+  /* This is used to generate text stream */
+
+  const chat = model.startChat({
+    history: [
+      {
+        role: "user",
+        parts: [{ text: "Hello" }],
+      },
+      {
+        role: "model",
+        parts: [{ text: "Great to meet you. What would you like to know?" }],
+      },
+    ],
+  });
+
   const endRef = useRef(null);
 
   useEffect(() => {
@@ -25,8 +40,18 @@ const NewPrompt = () => {
   const addPrompt = async (text) => {
     // const prompt = "Explain how AI works";
     setQuestion(text);
-    const result = await model.generateContent(Object.entries(img.aiData).length ? [img.aiData, text] : [text]);
-    setAnswer(result.response.text());
+    const result = await chat.sendMessageStream(
+      Object.entries(img.aiData).length ? [img.aiData, text] : [text]
+    );
+
+    let accumulatedText = "";
+    for await (const chunk of result.stream) {
+      const chunkText = chunk.text();
+      // process.stdout.write(chunkText);
+      accumulatedText += chunkText;
+      setAnswer(accumulatedText);
+    }
+
     setImg({ isLoading: false, error: "", databaseData: {}, aiData: {} });
     // console.log(result.response.text());
   };
