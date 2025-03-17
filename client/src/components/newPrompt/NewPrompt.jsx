@@ -13,6 +13,7 @@ const NewPrompt = () => {
     isLoading: false,
     error: "",
     databaseData: {},
+    aiData: {},
   });
 
   const endRef = useRef(null);
@@ -24,8 +25,9 @@ const NewPrompt = () => {
   const addPrompt = async (text) => {
     // const prompt = "Explain how AI works";
     setQuestion(text);
-    const result = await model.generateContent(text);
+    const result = await model.generateContent(Object.entries(img.aiData).length ? [img.aiData, text] : [text]);
     setAnswer(result.response.text());
+    setImg({ isLoading: false, error: "", databaseData: {}, aiData: {} });
     // console.log(result.response.text());
   };
 

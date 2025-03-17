@@ -30,7 +30,6 @@ const authenticator = async () => {
 };
 
 const UploadFiles = ({ setImg }) => {
-
   const iKUploadRef = useRef(null);
 
   const onError = (err) => {
@@ -46,9 +45,23 @@ const UploadFiles = ({ setImg }) => {
     console.log("Progress", progress);
   };
 
+  /* This function is used for image recognition */
   const onUploadStart = (evt) => {
-    console.log("Start", evt);
-    setImg((prev) => ({ ...prev, isLoading: true }));
+    const file = evt.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImg((prev) => ({
+        ...prev,
+        isLoading: true,
+        aiData: {
+          inlineData: {
+            data: reader.result.split(",")[1],
+            mimeType: file.type,
+          },
+        },
+      }));
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -70,7 +83,11 @@ const UploadFiles = ({ setImg }) => {
       />
       {
         <label onClick={() => iKUploadRef.current.click()}>
-          <img src="/attachment.png" alt="File Attachment Image" className="w-[16px] h-[16px]" />
+          <img
+            src="/attachment.png"
+            alt="File Attachment Image"
+            className="w-[16px] h-[16px]"
+          />
         </label>
       }
     </IKContext>
