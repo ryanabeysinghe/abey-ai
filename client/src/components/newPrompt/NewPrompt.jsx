@@ -63,7 +63,15 @@ const NewPrompt = () => {
 
     if (!text) return;
 
-    addPrompt(text);
+    // addPrompt(text);
+
+    await fetch("http://localhost:3000/api/chats", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: text })
+    })
   };
 
   return (
