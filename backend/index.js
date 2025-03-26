@@ -5,25 +5,24 @@ Changed scripts package.json to add ("start": "nodemon index.js") so nodemon can
 */
 
 //import express from "express";
-// const express = require('express')
-// const app = express();
-// const port = process.env.PORT || 3000;
-
-// const ImageKit = require('imagekit');
-// const cors = require('cors');
-// const { default: mongoose } = require('mongoose');
-// const Chat = require('./models/chat.js');
-// const UserChats = require('./models/userChats.js');
-
-import express from "express";
-import cors from "cors";
-import ImageKit from "imagekit";
-import mongoose from "mongoose";
-import Chat from "./models/chat.js";
-import UserChats from "./models/userChats.js";
-
+const express = require('express')
 const app = express();
 const port = process.env.PORT || 3000;
+
+const ImageKit = require('imagekit');
+const cors = require('cors');
+const { default: mongoose } = require('mongoose');
+const Chat = require('./models/chat.js');
+const UserChats = require('./models/userChats.js');
+
+// import express from "express";
+// import cors from "cors";
+// import ImageKit from "imagekit";
+// import mongoose from "mongoose";
+// import Chat from "./models/chat.js";
+// import UserChats from "./models/userChats.js";
+// const app = express();
+// const port = process.env.PORT || 3000;
 
 /* Middleware for request-reponse cycle */
 app.use(cors({

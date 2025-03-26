@@ -1,5 +1,5 @@
-//const mongoose = require('mongoose');
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
+//import mongoose from "mongoose";
 
 const userChatsSchema = new mongoose.Schema({
     userId: {
@@ -24,4 +24,4 @@ const userChatsSchema = new mongoose.Schema({
     ],
 }, {timestamps: true});
 
-export default mongoose.models.userChats || mongoose.model("userChats", userChatsSchema);
+module.exports = mongoose.models.userChats || mongoose.model("userChats", userChatsSchema);
