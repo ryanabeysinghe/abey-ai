@@ -50,4 +50,4 @@ createRoot(document.getElementById('root')).render(
     {/* <App /> */}
     <RouterProvider router={router} />
   </StrictMode>,
-)
+);
