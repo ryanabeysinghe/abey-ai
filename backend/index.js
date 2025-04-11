@@ -21,7 +21,7 @@ import ImageKit from "imagekit";
 import mongoose from "mongoose";
 import Chat from "./models/chat.js";
 import UserChats from "./models/userChats.js";
-import { requireAuth, clerkClient } from "@clerk/express";
+import { requireAuth } from "@clerk/express";
 
 const app = express();
 const port = process.env.PORT || 3000;
