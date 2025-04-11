@@ -18,18 +18,16 @@ const NewPrompt = ({ data }) => {
   });
 
   /* This is used to generate text stream */
-
   const chat = model.startChat({
     history: [
-      {
-        role: "user",
-        parts: [{ text: "Hello" }],
-      },
-      {
-        role: "model",
-        parts: [{ text: "Great to meet you. What would you like to know?" }],
-      },
+      data?.history.map(({ role, parts }) => ({
+        role, 
+        parts: [{ text: parts[0].text }],
+      })),
     ],
+    generationConfig: {
+      // Max Tokens: 100
+    },
   });
 
   const endRef = useRef(null);
